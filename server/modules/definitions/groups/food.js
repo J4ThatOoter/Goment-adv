@@ -214,7 +214,570 @@ Class.legendaryHexagon = makeRare("hexagon", 1);
 Class.shadowHexagon = makeRare("hexagon", 2);
 Class.rainbowHexagon = makeRare("hexagon", 3);
 Class.transHexagon = makeRare("hexagon", 4);
-
+Class.heptagon = {
+  VALUE: 1200,
+  SHAPE: 7,
+  LABEL: "Heptagon",
+  SIZE: 30,
+  COLOR: "green",
+  PARENT: ["food"],
+  BODY: {
+    DAMAGE: 2.5 * basePolygonDamage,
+    DENSITY: 9.5,
+    HEALTH: 175,
+    RESIST: 3,
+     DISPLAY_NAME: true,
+    PENETRATION: 1.8,
+    ACCELERATION: 0.007,
+  },
+  DRAW_HEALTH: true,
+};
+exports.shinyHeptagon = makeRare(exports.heptagon, 0);
+exports.legendaryHeptagon = makeRare(exports.heptagon, 1);
+exports.shadowHeptagon = makeRare(exports.heptagon, 2);
+exports.rainbowHeptagon = makeRare(exports.heptagon, 3);
+exports.transHeptagon = makeRare(exports.heptagon, 4);
+Class.octagon = {
+  VALUE: 2860,
+  DISPLAY_NAME: true,
+  SHAPE: 8,
+  SIZE: 45.5,
+  LABEL: "Octagon",
+  PARENT: ["food"],
+  COLOR: "blue",
+  BODY: {
+    DAMAGE: 3.15 * basePolygonDamage,
+    DENSITY: 11,
+    HEALTH: 360,
+    RESIST: 2,
+    PENETRATION: 1.8,
+    ACCELERATION: 0.007,
+  },
+  DRAW_HEALTH: true,
+};
+Class.shinyOctagon = makeRare(exports.octagon, 0);
+exports.legendaryOctagon = makeRare(exports.octagon, 1);
+exports.shadowOctagon = makeRare(exports.octagon, 2);
+exports.rainbowOctagon = makeRare(exports.octagon, 3);
+exports.transOctagon = makeRare(exports.octagon, 4);
+Class.nonagon = {
+  VALUE: 18800,
+  PARENT: ["food"],
+  SHAPE: 9,
+  LABEL: "Nonagon",
+  SIZE: 60,
+  DISPLAY_NAME: true,
+  COLOR: "#590195",
+  BODY: {
+    DAMAGE: 5 * basePolygonDamage,
+    DENSITY: 11,
+    HEALTH: 760,
+    RESIST: 7,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.002,
+  },
+  DRAW_HEALTH: true,
+};
+exports.decagon = {
+  VALUE: 52860,
+  PARENT: ["food"],
+  LABEL: "Decagon",
+  SHAPE: 10,
+  SIZE: 109,
+  COLOR: "#282828",
+  DISPLAY_NAME: true,
+  BODY: {
+    DAMAGE: 9.15 * basePolygonDamage,
+    DENSITY: 20,
+    HEALTH: 1009,
+    RESIST: 8,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.hendecagon = {
+  PARENT: ["food"],
+  VALUE: 325000,
+  SHAPE: 11,
+  DISPLAY_NAME: true,
+  LABEL: "Hendeagon",
+  SIZE: 125,
+  COLOR: "#4F4F4F",
+  BODY: {
+    DAMAGE: 18.15 * basePolygonDamage,
+    DENSITY: 30,
+    HEALTH: 2900,
+    RESIST: 18.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.dodecagon = {
+  PARENT: ["food"],
+  DISPLAY_NAME: true,
+  VALUE: 325000,
+  LABEL: "Dodecagon",
+  SHAPE: 12,
+  SIZE: 150,
+  COLOR: "#2A2A2A",
+  BODY: {
+    DAMAGE: 26.55 * basePolygonDamage,
+    DENSITY: 35.5,
+    HEALTH: 3500,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.tridecagon = {
+  PARENT: ["food"],
+  VALUE: 890000,
+  LABEL: "Tridecagon",
+  SHAPE: 13,
+  SIZE: 210,
+  COLOR: "#EFEFEF",
+  DISPLAY_NAME: true,
+  BODY: {
+    DAMAGE: 40.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 5000,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.tetradecagon = {
+  PARENT: ["food"],
+  VALUE: 890000,
+  SHAPE: 14,
+  LABEL: "Tetradecagon",
+  DISPLAY_NAME: true,
+  SIZE: 260,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 80.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 7500,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.pentadecagon = {
+  VALUE: 6750000,
+  DISPLAY_NAME: true,
+  PARENT: ["food"],
+  SHAPE: 15,
+  LABEL: "Pentadecagon",
+  SIZE: 340,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 80.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 10000,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.hexadecagon = {
+  VALUE: 24250000,
+  PARENT: ["food"],
+  SHAPE: 16,
+  DISPLAY_NAME: true,
+  LABEL: "Hexadecagon",
+  SIZE: 395,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 80.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 27500,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.heptadecagon = {
+  VALUE: 194250000,
+  PARENT: ["food"],
+  SHAPE: 17,
+  LABEL: "Heptadecagon",
+  SIZE: 420,
+  DISPLAY_NAME: true,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 80.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 50000,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.octadecagon = {
+  VALUE: 194250000,
+  PARENT: ["food"],
+  DISPLAY_NAME: true,
+  SHAPE: 18,
+  SIZE: 480,
+  LABEL: "Octadecagon",
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 80.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 75000,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.ennadecagon = {
+  VALUE: 760250000,
+  PARENT: ["food"],
+  DISPLAY_NAME: true,
+  SHAPE: 19,
+  LABEL: "Ennadecagon",
+  SIZE: 535,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 80.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 100000,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosagon = {
+  VALUE: 3760250000,
+  PARENT: ["food"],
+  DISPLAY_NAME: true,
+  SHAPE: 20,
+  LABEL: "Icosagon",
+  SIZE: 680,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 120.55 * basePolygonDamage,
+    DENSITY: 70.5,
+    HEALTH: 250000,
+    RESIST: 20.5,
+    PENETRATION: 3.8,
+    ACCELERATION: 0.003,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaihenagon = {
+  VALUE: 11882906712,
+  PARENT: ["food"],
+  DISPLAY_NAME: true,
+  SHAPE: 21,
+  LABEL: "Icosikaihenagon",
+  SIZE: 749,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 180,
+    HEALTH: 750000,
+    PENETRATION: 31.8,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaidigon = {
+  VALUE: 55882906712,
+  PARENT: ["food"],
+  DISPLAY_NAME: true,
+  SHAPE: 22,
+  LABEL: "Icosikaidigon",
+  SIZE: 789,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 225,
+    HEALTH: 1250000,
+    PENETRATION: 31.8,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaitrigon = {
+  VALUE: 102658909125,
+  PARENT: ["food"],
+  SHAPE: 23,
+  LABEL: "Icosikaitrigon",
+  SIZE: 805,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 315,
+    HEALTH: 6290000,
+    PENETRATION: 35.8,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaitetragon = {
+  VALUE: 552658909125,
+  PARENT: ["food"],
+  SHAPE: 24,
+  LABEL: "Icosikaitetragon",
+  SIZE: 845,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 575,
+    HEALTH: 10280000,
+    PENETRATION: 40,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaipentagon = {
+  VALUE: 1872658909125,
+  PARENT: ["food"],
+  SHAPE: 25,
+  LABEL: "Icosikaipentagon",
+  SIZE: 878,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 798,
+    HEALTH: 61520000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaihexagon = {
+  VALUE: 8872658909125,
+  PARENT: ["food"],
+  SHAPE: 26,
+  LABEL: "Icosikaihexagon",
+  SIZE: 918,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 1078,
+    HEALTH: 320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaiheptagon = {
+  VALUE: 68872658909125,
+  PARENT: ["food"],
+  SHAPE: 27,
+  LABEL: "Icosikaiheptagon",
+  SIZE: 978,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 1078,
+    HEALTH: 980000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaioctagon = {
+  VALUE: 128872658909125,
+  PARENT: ["food"],
+  SHAPE: 28,
+  LABEL: "Icosikaioctagon",
+  SIZE: 1068,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 1078,
+    HEALTH: 8520000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.icosikaiennagon = {
+  VALUE: 128872658909125,
+  PARENT: ["food"],
+  SHAPE: 29,
+  LABEL: "Icosikaiennagon",
+  SIZE: 1120,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 1378,
+    HEALTH: 12020000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontagon = {
+  VALUE: 12228872658909125,
+  PARENT: ["food"],
+  SHAPE: 30,
+  LABEL: "Triacontagon",
+  SIZE: 1263,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 2098,
+    HEALTH: 2020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaihenagon = {
+  VALUE: 9912828872658909125,
+  PARENT: ["food"],
+  SHAPE: 31,
+  LABEL: "Triacontakaihenagon",
+  SIZE: 1698,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 20918,
+    HEALTH: 32020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaidigon = {
+  VALUE: 75112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 32,
+  LABEL: "Triacontakaidigon",
+  SIZE: 1812,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 70918,
+    HEALTH: 82020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaitrigon = {
+    VALUE: 195112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 33,
+  LABEL: "Triacontakaitrigon",
+  SIZE: 2064,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 170918,
+    HEALTH: 162020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaitetragon = {
+   VALUE: 541112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 34,
+  LABEL: "Triacontakaitetragon",
+   SIZE: 2381,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 670918,
+    HEALTH: 782020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaipentagon = {
+   VALUE: 1011112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 35,
+  LABEL: "Triacontakaipentagon",
+   SIZE: 2610,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 1970918,
+    HEALTH: 2282020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaihexagon = {
+   VALUE: 6711112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 36,
+  LABEL: "Triacontakaihexagon",
+   SIZE: 2872,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 22970918,
+    HEALTH: 116772020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaiheptagon = {
+     VALUE: 12171112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 37,
+  LABEL: "Triacontakaiheptagon",
+   SIZE: 3013,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 22970918,
+    HEALTH: 1986772020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaioctagon = {
+     VALUE: 79971112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 38,
+  LABEL: "Triacontakaioctagon",
+   SIZE: 3477,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 229170918,
+    HEALTH: 4786772020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.triacontakaienneagon = {
+   VALUE: 339971112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 39,
+  LABEL: "Triacontakaiennagon",
+   SIZE: 3891,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 42917092218,
+    HEALTH: 14786772020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
+exports.tetracontagon = {
+    VALUE: 6999971112828872658909125,
+  PARENT: ["food"],
+  SHAPE: 40,
+  LABEL: "Tetracontagon",
+   SIZE: 4691,
+  COLOR: "#2E2E2E",
+  BODY: {
+    DAMAGE: 427917092218,
+    HEALTH: 984786772020320000000,
+    PENETRATION: 50,
+    ACCELERATION: 0.005,
+  },
+  DRAW_HEALTH: true,
+};
 // 3D POLYGONS
 Class.sphere = {
     PARENT: "food",

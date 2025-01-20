@@ -230,6 +230,12 @@ let generatorMatrix = [
     [ "betaPentagon"  , "shinyBetaPentagon"  , "legendaryBetaPentagon"  , "shadowBetaPentagon"  , "rainbowBetaPentagon"  , "transBetaPentagon"  , "BetaPentagonRelic"  , "dodecahedron" ],
     [ "alphaPentagon" , "shinyAlphaPentagon" , "legendaryAlphaPentagon" , "shadowAlphaPentagon" , "rainbowAlphaPentagon" , "transAlphaPentagon" , "AlphaPentagonRelic" , "icosahedron"  ],
     [ "hexagon"       , "shinyHexagon"       , "legendaryHexagon"       , "shadowHexagon"       , "rainbowHexagon"       , "transHexagon"       , "HexagonRelic"       , "tesseract"    ],
+   ["heptagon", "octagon", "nonagon", "decagon", "hendecagon", "dodecagon", "tridecagon"],
+   ["tetradecagon", "pentadecagon", "hexadecagon", "heptadecagon", "octadecagon", "ennadecagon", "icosagon"],
+  ["icosikaihenagon", "icosikaidigon", "icosikaitrigon", "icosikaitetragon", "icosikaipentagon", "icosikaihexagon", "icosikaiheptagon"],
+  ["icosikaioctagon", "icosikaiennagon", "triacontagon", "squarechan", "trichan", "eggchan", "pentachan"],
+  ["warpgem", "trappentagon", "shinyTrapPentagon", "legTrapPentagon", "shadTrapPentagon", "queentriangle", "HeptaRelic"],
+  ["triacontakaihenagon", "triacontakaidigon", "triacontakaitrigon", "triacontakaitetragon", "triacontakaipentagon", "triacontakaihexagon", "triacontakaiheptagon"],
 ],
 gemRelicMatrix = [];
 for (let tier of [ "", "Egg", "Square", "Triangle", "Pentagon", "BetaPentagon", "AlphaPentagon", "Hexagon" ]) {
