@@ -166,6 +166,48 @@ Class.genericBoss = {
     BROADCAST_MESSAGE: "A visitor has left!",
     BODY: { PUSHABILITY: 0.05 }
 }
+Class.tebasMob = {
+    PARENT: "genericTank",
+    TYPE: "miniboss",
+    DANGER: 9,
+  DISPLAY_NAME: true,
+  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+    SKILL: skillSet({
+        rld: 0.7,
+        dam: 0.7,
+        pen: 0.7,
+        str: 0.7,
+        spd: 0.3,
+        atk: 1.1,
+        hlt: 1,
+        shi: 0.5,
+        rgn: 0.4,
+        mob: 0,
+    }),
+    LEVEL: 45,
+  
+}
+Class.tebasBoss = {
+    PARENT: "genericTank",
+    TYPE: "miniboss",
+    DANGER: 9,
+  DISPLAY_NAME: true,
+  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+    SKILL: skillSet({
+        rld: 0.9,
+        dam: 0.8,
+        pen: 0.6,
+        str: 0.9,
+        spd: 0.5,
+        atk: 1.3,
+        hlt: 1.5,
+        shi: 0.5,
+        rgn: 0.7,
+        mob: 0,
+    }),
+    LEVEL: 60,
+  
+}
 
 Class.food = {
     TYPE: "food",

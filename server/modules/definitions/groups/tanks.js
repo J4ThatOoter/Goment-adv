@@ -1,4 +1,4 @@
-const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray } = require('../facilitators.js');
+const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRadialAuto, weaponArray, addAura } = require('../facilitators.js');
 const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
@@ -3876,6 +3876,1376 @@ Class.overtrapper = makeOver({
         }
     ]
 })
+//TEBAS
+Class.hextro = {
+  PARENT: ["tebasMob"],
+  LABEL: "Hextro",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 27,
+  LEVEL: 45,
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 150,
+    SHIELD: 10,
+    SPEED: 7.5,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.whirlHextro = {
+  PARENT: ["tebasMob"],
+  LABEL: "Whirl Hextro",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 27,
+  LEVEL: 45,
+   CONTROLLERS: ["whirlwind"],
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 150,
+    SHIELD: 10,
+    SPEED: 7.5,
+  },
+AI: {
+        SPEED: 2, 
+    },
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 3; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.25},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 240}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
+}
+Class.whirlHextroV2 = {
+  PARENT: ["tebasMob"],
+  LABEL: "Whirl Hextro V2",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 27,
+  LEVEL: 45,
+   CONTROLLERS: ["whirlwind"],
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 150,
+    SHIELD: 10,
+    SPEED: 7.5,
+  },
+AI: {
+        SPEED: 2, 
+    },
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 9; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.15},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 240}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
+}
+Class.whirlHextroV3 = {
+  PARENT: ["tebasMob"],
+  LABEL: "Whirl Hextro V3",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 27,
+  LEVEL: 45,
+   CONTROLLERS: ["whirlwind"],
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 150,
+    SHIELD: 10,
+    SPEED: 7.5,
+  },
+AI: {
+        SPEED: 2, 
+    },
+    GUNS: (() => { 
+        let output = []
+        for (let i = 0; i < 3; i++) { 
+            output.push({ 
+                POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.15},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["satellite", {ANGLE: i * 240}], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+              })
+        }
+               for (let i = 0; i < 3; i++) { 
+            output.push({ 
+               POSITION: {WIDTH: 8, LENGTH: 1, DELAY: i * 0.15},
+                PROPERTIES: {
+                    SHOOT_SETTINGS: combineStats([g.satellite]), 
+                    TYPE: ["babyhextro", {ANGLE: i * 240,  CONTROLLERS: [['orbit', {invert: true}]] }], 
+                    MAX_CHILDREN: 1,   
+                    AUTOFIRE: true,  
+                    SYNCS_SKILLS: false,
+                    WAIT_TO_CYCLE: true
+                }
+            }) 
+        }
+        return output
+    })()
+}
+Class.babyhextro = {
+  PARENT: ["tebasMob"],
+  LABEL: "Baby Hextro",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 18.5,
+  LEVEL: 35,
+  SKILL: [4, 4, 5, 2, 5, 3, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 60,
+    SHIELD: 1.11,
+    SPEED: 7.5,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 1.01 }]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.babyhextlya = {
+  PARENT: ["tebasMob"],
+  LABEL: "Baby Female Hextro",
+  COLOR: "#F05BFA",
+  SHAPE: 6,
+  SIZE: 16.78,
+  LEVEL: 37,
+  SKILL: [4, 6, 5, 2, 5, 3, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 68.88,
+    SHIELD: 0.99,
+    SPEED: 7.5,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 1.01 }]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.babyhextlyamini = {
+  PARENT: ["minion"],
+  LABEL: "Baby Female Hextro Minion",
+  COLOR: "#F05BFA",
+  SHAPE: 6,
+  SIZE: 16.78,
+  LEVEL: 37,
+  SKILL: [4, 6, 5, 2, 5, 3, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 68.88,
+    SHIELD: 0.99,
+    SPEED: 7.5,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 1.01 }]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.hextlya = {
+  PARENT: ["tebasMob"],
+  LABEL: "Female Hextro",
+  COLOR: "#F05BFA",
+  SHAPE: 6,
+  SIZE: 26,
+  LEVEL: 45,
+  SKILL: [3, 7, 5, 3, 5, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 170,
+    SHIELD: 9.5,
+    SPEED: 7.5,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.baddieDeco1 = makeDeco(0, "white")
+Class.baddieDeco2 = makeDeco(0, "black")
+Class.baddieDeco3 = makeDeco(3, "black")
+Class.baddieDecoLayer1 = makeDeco(6, "#ab29e8")
+Class.baddieDaughter = {
+  PARENT: ["tebasMob"],
+  LABEL: "Baddie Daughter",
+  NAME: "Sarah",
+  COLOR: "#bb2aff",
+  SHAPE: 6,
+  SIZE: 48,
+  LEVEL: 45,
+  VALUE: 750000,
+  SKILL: [5, 12, 9, 9, 6, 8, 5, 8, 10, 10],
+  BODY: {
+    HEALTH: 7690,
+    SHIELD: 12.5,
+    SPEED: 7.5,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 15.5, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#ab29e8", MIRROR_MASTER_ANGLE: true }],
+      },
+    {
+       POSITION: { SIZE: 9.6, ANGLE: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "black", }],
+    },
+    {
+       POSITION: { SIZE: 5.6, X: 1, ANGLE: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "white",  MIRROR_MASTER_ANGLE: true,  CONTROLLERS: ["nearestDifferentMaster", { lookAtDanger: true }]}],
+       },
+    {
+       POSITION: { SIZE: 2.9, Y: 2, X: -4, ANGLE: -45, LAYER: 1 },
+      TYPE: ["triangle", { COLOR: "black"}],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "splitterBullet",
+        COLOR: "black",
+        },
+    },
+    {
+      POSITION: [0, 3.15, 1, 0, 0, 0, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+        MAX_CHILDREN: 4,
+        TYPE: "babyhextlyamini",
+      },
+    },
+  ],
+};
+Class.hextlyaV2Aura = addAura(0.33, 0.8)
+Class.hextlyaV2 = {
+  PARENT: ["tebasMob"],
+  LABEL: "Female Hextro V2",
+  COLOR: "#F05BFA",
+  SHAPE: 6,
+  SIZE: 26,
+  LEVEL: 45,
+  SKILL: [3, 7, 5, 3, 5, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 170,
+    SHIELD: 9.5,
+    SPEED: 7.5,
+  },
+  TURRETS: [
+   	 {
+   		 POSITION: [13, 0, 0, 0, 0, 1],
+   		 TYPE: 'hextlyaV2Aura'
+     },
+    ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+       POSITION: [7, 7.5, 0.6, 7, 4, 90, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.battleship]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: "swarm",
+                LABEL: "Guided"
+            }
+        },
+        {
+            POSITION: [7, 7.5, 0.6, 7, -4, 90, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm]),
+                TYPE: "autoswarm",
+                STAT_CALCULATOR: "swarm",
+                LABEL: "Autonomous"
+            }
+        },
+        {
+            POSITION: [7, 7.5, 0.6, 7, 4, 270, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm]),
+                TYPE: "autoswarm",
+                STAT_CALCULATOR: "swarm",
+                LABEL: "Autonomous"
+            }
+        },
+        {
+            POSITION: [7, 7.5, 0.6, 7, -4, 270, 0.5],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.swarm, g.battleship]),
+                TYPE: "swarm",
+                STAT_CALCULATOR: "swarm",
+                LABEL: "Guided"
+      },
+    },
+  ],
+};
+Class.megahextlya = {
+  PARENT: ["tebasMob"],
+  LABEL: "Mega Female Hextro",
+  COLOR: "#F05BFA",
+  SHAPE: 6,
+  SIZE: 33,
+  LEVEL: 45,
+  VALUE: 46000,
+  SKILL: [5, 8, 5, 3, 5, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 220,
+    SHIELD: 8.11,
+    SPEED: 7.5,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 17.5, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#9E0BA7", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "splitterBullet",
+      },
+    },
+  ],
+};
+Class.megahextro = {
+  PARENT: ["tebasMob"],
+  LABEL: "Mega Hextro",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 34,
+  LEVEL: 45,
+  VALUE: 89000,
+  SKILL: [10, 10, 5, 5, 7, 6, 1, 6, 5, 6],
+  BODY: {
+    HEALTH: 210,
+    SHIELD: 18,
+    SPEED: 7.5,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 17.5, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#F13636", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 3, speed: 2.5 }]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.elderhextro = {
+  PARENT: ["tebasMob"],
+  LABEL: "Strong Hextro",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 68,
+  LEVEL: 60,
+  SKILL: [10, 13, 5, 5, 7, 6, 1, 6, 5, 6],
+  BODY: {
+    HEALTH: 980,
+    SHIELD: 15,
+    SPEED: 5.5,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 17.5, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#F13636", MIRROR_MASTER_ANGLE: true }],
+    },
+    {
+      POSITION: { SIZE: 14.5, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#DD3232", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 2, speed: 2.5 }]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+
+Class.supremer = {
+  PARENT: ["tebasMob"],
+  LABEL: "Supremer",
+  NAME: "Supremer",
+  COLOR: "#8B0000",
+  SHAPE: 6,
+  SIZE: 70,
+  LEVEL: 120,
+  VALUE: 6700000,
+  SKILL: [10, 10, 5, 6, 7, 6, 5, 5, 5, 6],
+  BODY: {
+    HEALTH: 4780,
+    SHIELD: 16,
+    SPEED: 5.55,
+  },
+  GLOW: {
+    RADIUS: 28,
+    COLOR: "black",
+    ALPHA: 1,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 40 ** Math.SQRT1_2, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#700000", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, -15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [13, 9, 1, 0, 0, 15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16.5, 9.15, 1, 0, 0, 0, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.femalesupremer = {
+  PARENT: ["tebasMob"],
+  LABEL: "E-76 Girl",
+  NAME: "Linda",
+  COLOR: "#A100AB",
+  SHAPE: 6,
+  SIZE: 65,
+  LEVEL: 120,
+  VALUE: 4400000,
+  SKILL: [10, 10, 5, 6, 8, 8, 8, 5, 5, 6],
+  BODY: {
+    HEALTH: 3980,
+    SHIELD: 9.5,
+    SPEED: 4.55,
+  },
+  GLOW: {
+    RADIUS: 28,
+    COLOR: "black",
+    ALPHA: 1,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 40 ** Math.SQRT1_2, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#AD15B6", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, -15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [13, 9, 1, 0, 0, 15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16.5, 9.15, 1, 0, 0, 0, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+
+Class.congo = {
+  PARENT: ["tebasMob"],
+  LABEL: "Congo",
+  COLOR: "#2800af",
+  SHAPE: 8,
+  SIZE: 33,
+  LEVEL: 45,
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 300,
+    SHIELD: 20,
+    SPEED: 4.1,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.congoAdv = {
+  PARENT: ["tebasMob"],
+  LABEL: "Congo Advanced",
+  COLOR: "#2800af",
+  SHAPE: 8,
+  SIZE: 38,
+  LEVEL: 47,
+  SKILL: [10, 10, 7, 5, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 300,
+    SHIELD: 20,
+    SPEED: 4.1,
+  },
+  TURRETS: [
+   	 {
+   		 POSITION: [13, 0, 0, 0, 0, 1],
+   		 TYPE: 'spawnerTurret'
+     },
+    ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.babycongo = {
+  PARENT: ["tebasMob"],
+  LABEL: "Baby Congo",
+  COLOR: "#2800af",
+  SHAPE: 8,
+  SIZE: 24,
+  LEVEL: 28,
+  SKILL: [4, 7, 5, 2, 5, 4, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 201,
+    SHIELD: 0.97,
+    SPEED: 4.1,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.cameroon = {
+  PARENT: ["tebasMob"],
+  LABEL: "Cameroon",
+  COLOR: "#ff7b00",
+  SHAPE: 10,
+  SIZE: 38,
+  LEVEL: 45,
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 600,
+    SHIELD: 30,
+    SPEED: 2.3,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.mesopotamia = {
+  PARENT: ["tebasMob"],
+  LABEL: "Mesopotamia",
+  COLOR: "#FFD46B",
+  SHAPE: 12,
+  SIZE: 48,
+  LEVEL: 45,
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 1200,
+    SHIELD: 31.5,
+    SPEED: 2.3,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.pentilat = {
+  PARENT: ["tebasMob"],
+  LABEL: "Pentailator",
+  SHAPE: 5,
+  SIZE: 55,
+  LEVEL: 30,
+  VALUE: 169000,
+  BODY: {
+    HEALTH: 1100,
+    SHIELD: 3.3,
+    SPEED: 1.8,
+  },
+  GUNS: [
+    {
+      POSITION: [19, 17.5, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pounder,
+          g.destroyer,
+          g.annihilator,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.pentilat2 = {
+  PARENT: ["tebasMob"],
+  LABEL: "Pentailator II",
+  SHAPE: 5,
+  SIZE: 98,
+  LEVEL: 35,
+  VALUE: 319000,
+  COLOR: "#ff6316",
+  BODY: {
+    HEALTH: 3300,
+    SHIELD: 6.3,
+    SPEED: 1.3,
+  },
+  GUNS: [
+    {
+      POSITION: [19, 17.5, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pounder,
+          g.destroyer,
+          g.annihilator,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.pentilat3 = {
+  PARENT: ["tebasMob"],
+  LABEL: "Pentailator III",
+  SHAPE: 5,
+  SIZE: 148,
+  LEVEL: 70,
+  VALUE: 697560,
+  COLOR: "#008000",
+  BODY: {
+    HEALTH: 6600,
+    SHIELD: 8.3,
+    SPEED: 1.1,
+  },
+  GUNS: [
+    {
+      POSITION: [19, 17.5, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pounder,
+          g.destroyer,
+          g.annihilator,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.laventetra = {
+  PARENT: ["tebasMob"],
+  LABEL: "Lavenated Tetra",
+  SHAPE: 14,
+  SIZE: 235,
+  LEVEL: 101,
+  VALUE: 339988001,
+  COLOR: "#B2A4D4",
+  BODY: {
+    HEALTH: 70600,
+    SHIELD: 8.3,
+    SPEED: 1.03,
+  },
+  GUNS: [
+    {
+      POSITION: [17, 19.5, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pounder,
+          g.destroyer,
+          g.annihilator,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [17, 19.5, 1, 0, 0, 180, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          g.pounder,
+          g.destroyer,
+          g.annihilator,
+        ]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.octacrazor = {
+  PARENT: ["tebasMob"],
+  LABEL: "Octacrazor",
+  SHAPE: 8,
+  COLOR: "#C76E00",
+  SIZE: 135,
+  LEVEL: 90,
+  VALUE: 1337800,
+  BODY: {
+    HEALTH: 23600,
+    SHIELD: 72.6,
+    SPEED: 2.98,
+    DAMAGE: 19,
+    FOV: 3.5,
+  },
+};
+Class.octacrazor2x = {
+  PARENT: ["tebasMob"],
+  LABEL: "Octacrazor 2/X",
+  SHAPE: 8,
+  COLOR: "#C76E00",
+  SIZE: 270,
+  LEVEL: 97,
+  VALUE: 5337800,
+  BODY: {
+    HEALTH: 41600,
+    SHIELD: 1.6,
+    SPEED: 1.98,
+    DAMAGE: 19,
+    FOV: 3.5,
+  },
+  GUNS: [
+    {
+      POSITION: [0, 8, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, { reload: 0.93 }]),
+        TYPE: "superSplitterBullet",
+      },
+    },
+  ],
+};
+Class.pdemoBullet = {
+  PARENT: ["bullet"],
+  LABEL: "bullet",
+  SHAPE: "m 0 -4 l -1 3 l -3 1 l 3 1 l 1 3 l 1 -3 l 3 -1 l -3 -1 l -1 -3 z",
+  COLOR: "black",
+};
+Class.pdemoDeco = {
+  PARENT: ["genericTank"],
+  LABEL: "Deco",
+  DRAW_FILL: false,
+  SHAPE: "m 0 -4 l -1 3 l -3 1 l 3 1 l 1 3 l 1 -3 l 3 -1 l -3 -1 l -1 -3 z",
+  COLOR: "white",
+  GLOW: {
+    RADIUS: 80.5,
+    ALPHA: 0.9,
+    COLOR: "white",
+  },
+  GUNS: [
+    {
+      POSITION: [0, 11, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        ALPHA: 0,
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          { reload: 0.67, damage: 70, speed: 3.3 },
+        ]),
+        TYPE: "pdemoBullet",
+      },
+    },
+  ],
+};
+Class.pdemoDecoLite = {
+  PARENT: ["genericTank"],
+  LABEL: "Deco",
+  DRAW_FILL: false,
+  SHAPE: 3,
+  COLOR: "white",
+  GLOW: {
+    RADIUS: 80.5,
+    ALPHA: 0.9,
+    COLOR: "white",
+  },
+  GUNS: [
+    {
+      POSITION: [0, 11, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        ALPHA: 0,
+        SHOOT_SETTINGS: combineStats([
+          g.basic,
+          { reload: 0.67, damage: 30, speed: 3.3 },
+        ]),
+        TYPE: "pdemoBullet",
+      },
+    },
+  ],
+};
+Class.pdemo = {
+  PARENT: ["tebasMob"],
+  LABEL: "Paralyzed Democratic",
+  SHAPE: 12,
+  COLOR: "black",
+  SIZE: 300,
+  VALUE: 55500000000,
+  BODY: {
+    HEALTH: 126 * 960 * 248,
+    SHIELD: 0.001,
+    SPEED: 1.01,
+  },
+  GLOW: {
+    RADIUS: 310.5,
+    ALPHA: 0.9,
+    COLOR: "mirror",
+  },
+  TURRETS: [
+    {
+      POSITION: { SIZE: 3.4, X: 5, Y: 0, LAYER: 1 },
+      TYPE: "pdemoDeco",
+    },
+  ],
+  GUNS: [
+    ...weaponArray(
+      {
+        POSITION: [0, 1, 1, 0, 0, 360, 0],
+        PROPERTIES: {
+          ALPHA: 0,
+          SHOOT_SETTINGS: combineStats([
+            g.basic,
+            { reload: 0.67, damage: 30, speed: 3.3 },
+          ]),
+          TYPE: "bdemo",
+          MAX_CHILDREN: 1,
+        },
+      },
+      4
+    ),
+  ],
+};
+Class.bdemo = {
+  PARENT: ["tebasMob"],
+  LABEL: "Baby Paralyzed Democratic",
+  SHAPE: 9,
+  COLOR: "black",
+  SIZE: 40,
+  VALUE: 55500000,
+  BODY: {
+    HEALTH: 126 * 960 * 100,
+    SHIELD: 0.066,
+    SPEED: 1.01,
+  },
+  GLOW: {
+    RADIUS: 310.5,
+    ALPHA: 0.9,
+    COLOR: "mirror",
+  },
+  TURRETS: [
+    {
+      POSITION: { SIZE: 3.4, X: 5, Y: 0, LAYER: 1 },
+      TYPE: "pdemoDecoLite",
+    },
+  ],
+};
+Class.supremermini = {
+  PARENT: ["minion"],
+  LABEL: "Supremer",
+  NAME: "Supremer",
+  COLOR: "#8B0000",
+  SHAPE: 6,
+  SIZE: 70,
+  LEVEL: 120,
+  VALUE: 6700000,
+  SKILL: [10, 10, 5, 6, 7, 6, 5, 5, 5, 6],
+  BODY: {
+    HEALTH: 4780,
+    SHIELD: 16,
+    SPEED: 25.55,
+  },
+  GLOW: {
+    RADIUS: 28,
+    COLOR: "black",
+    ALPHA: 1,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 40 ** Math.SQRT1_2, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#700000", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, -15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [13, 9, 1, 0, 0, 15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16.5, 9.15, 1, 0, 0, 0, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.superyerator = {
+  PARENT: ["tebasMob"],
+  LABEL: "Superyerator",
+  NAME: "Superyerator",
+  COLOR: "#a80000",
+  SHAPE: 6,
+  SIZE: 150,
+  LEVEL: 360,
+  VALUE: 967700000,
+  SKILL: [10, 10, 5, 6, 7, 6, 5, 5, 5, 6],
+  BODY: {
+    HEALTH: 299880,
+    SHIELD: 0.01,
+    SPEED: 5.55,
+  },
+  GLOW: {
+    RADIUS: 28,
+    COLOR: "black",
+    ALPHA: 1,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 80 ** Math.SQRT1_2, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#910101", MIRROR_MASTER_ANGLE: true }],
+    },
+    {
+      POSITION: { SIZE: 70 ** Math.SQRT1_2, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#820101", MIRROR_MASTER_ANGLE: true }],
+    },
+    {
+      POSITION: { SIZE: 60 ** Math.SQRT1_2, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#6b0000", MIRROR_MASTER_ANGLE: true }],
+    },
+    {
+      POSITION: { SIZE: 50 ** Math.SQRT1_2, ANGLE: 0, LAYER: 1 },
+      TYPE: ["hexagon", { COLOR: "#4f0000", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [10.5, 9, 1, 0, 0, -30, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [10.5, 9, 1, 0, 0, 30, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [13, 9, 1, 0, 0, -15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [13, 9, 1, 0, 0, 15, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [16.5, 9.15, 1, 0, 0, 0, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+        TYPE: "bullet",
+      },
+    },
+    {
+      POSITION: [0, 3.15, 1, 0, 0, 0, 1],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic, g.pounder]),
+        MAX_CHILDREN: 4,
+        TYPE: "supremermini",
+      },
+    },
+  ],
+};
+
+Class.eyerLite = {
+  PARENT: ["tebasMob"],
+  LABEL: "Eyer Lite",
+  SHAPE: 5,
+  SIZE: 50,
+  COLOR: "#DC8F2D",
+  IS_SMASHER: true,
+  CONTROLLERS: ["nearestDifferentMaster"],
+  VALUE: 85000,
+  BODY: {
+    HEALTH: 5400,
+    SHIELD: 0.29,
+    SPEED: 5.55,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 15, X: 0, Y: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "black" }],
+    },
+    {
+      POSITION: { SIZE: 8, X: 4.5, Y: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "white", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+};
+Class.eyerlayer = makeDeco(7, "#DC8F2D");
+Class.eyer = {
+  PARENT: ["tebasMob"],
+  LABEL: "Eyer",
+  SHAPE: 7,
+  SIZE: 100,
+  COLOR: "#DC8F2D",
+  IS_SMASHER: true,
+  CONTROLLERS: ["nearestDifferentMaster"],
+  VALUE: 485000,
+  BODY: {
+    HEALTH: 10400,
+    SHIELD: 0.58,
+    SPEED: 6.55,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 17.5, X: 0, Y: 0, LAYER: 1 },
+      TYPE: ["eyerlayer", { COLOR: "#DC8F2D" }],
+    },
+    {
+      POSITION: { SIZE: 15, X: 0, Y: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "black" }],
+    },
+    {
+      POSITION: { SIZE: 8, X: 4.5, Y: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "white", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+};
+Class.heptadecaquad = {
+  PARENT: ["tebasMob"],
+  LABEL: "HeptaDecaQuad",
+  SHAPE: 17,
+  COLOR: "#A3F051",
+  SIZE: 49,
+  VALUE: 210000,
+  CONTROLLERS: [["spin", { speed: 0.025 }]],
+  BODY: {
+    HEALTH: 5000,
+    SHIELD: 0.12,
+    DAMAGE: 3,
+    SPEED: 0.1,
+  },
+
+  GUNS: [
+    ...weaponArray(
+      {
+        POSITION: [18, 4.5, 1, 0, 0, 40, 0],
+        PROPERTIES: {
+            SHOOT_SETTINGS: combineStats([g.basic]),
+          TYPE: "bullet",
+        },
+      },
+      4
+    ),
+  ],
+};
+//adv
+Class.hextromini = {
+  PARENT: ["minion"],
+  LABEL: "Hextro",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 27,
+  LEVEL: 45,
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 150,
+    SHIELD: 10,
+    SPEED: 7.5,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "bullet",
+      },
+    },
+  ],
+};
+Class.hextroSwarmShooter = {
+  PARENT: ["genericTank"],
+  LABEL: "Hextro",
+  COLOR: "#ff3737",
+  SHAPE: 6,
+  SIZE: 27,
+  LEVEL: 45,
+  SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 150,
+    SHIELD: 10,
+    SPEED: 7.5,
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+  GUNS: [
+    {
+      POSITION: [13, 9, 1, 0, 0, 0, 0],
+      PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.basic]),
+        TYPE: "hextroSwarm",
+      },
+    },
+  ],
+};
+Class.hextroClub = {
+  PARENT: ["tebasMob"],
+  LABEL: "Hextro House (male)",
+  SHAPE: 12,
+  SIZE: 100,
+  COLOR: "#ff3737",
+  BODY: {
+    SPEED: 0,
+    HEALTH: 11000,
+    SHIELD: 5.5,
+    DAMAGE: 10,
+  },
+  TURRETS: [
+    ...weaponArray(
+      {
+        POSITION: [14, 5.5, 0, 0, 60, 1],
+        TYPE: "hextroSwarmShooter",
+      },
+      3
+    ),
+  ],
+  GUNS: [
+    ...weaponArray(
+      {
+        POSITION: [14, 7, 1.15, 0, 0, 150, 0],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([g.basic]),
+          TYPE: "hextromini",
+          MAX_CHILDREN: 1,
+          AUTOFIRE: true,
+        },
+      },
+      12
+    ),
+  ],
+};
+Class.tridecamini = {
+  PARENT: ["minion"],
+  LABEL: "triDecagonMinion",
+  SHAPE: 13,
+  SIZE: 126,
+  COLOR: "#AA16B3",
+  BODY: {
+    HEALTH: 400000,
+    SHIELD: 0.117,
+    SPEED: 3.3,
+    DAMAGE: 7.6,
+  },
+  GUNS: [
+    ...weaponArray(
+      {
+        POSITION: [14.5, 5, 1, 0, 0, 152.3, 0],
+        PROPERTIES: {
+          SHOOT_SETTINGS: combineStats([
+            g.basic,
+            { reload: 2.51, damage: 0.27 },
+          ]),
+          TYPE: "homingBullet",
+        },
+      },
+      13
+    ),
+  ],
+};
+
+Class.ennadecaDeco = makeDeco(18, "#A32FAB");
+Class.ennadecaDeco2 = makeDeco(17, "#AB33B3");
+Class.ennadecaDeco3 = makeDeco(16, "#CD3DD6");
+Class.ennadecaDeco4 = makeDeco(15, "#A32FAB");
+Class.ennadecaDeco5 = makeDeco(14, "#AB33B3");
+Class.ennadecaDeco6 = makeDeco(13, "#CD3DD6");
+Class.ennadecagonf = {
+  PARENT: ["tebasMob"],
+  LABEL: "Anti-Heptagons",
+  NAME: "Ennadecagonlizeration",
+  SHAPE: 19,
+  COLOR: "#89268F",
+  SIZE: 300,
+  VALUE: 99e10,
+  BODY: {
+    HEALTH: 90000 * 900,
+    SPEED: 0.11,
+    DAMAGE: 90 * 990,
+    SHIELD: 1.1,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 19, ANGLE: 0, LAYER: 1 },
+      TYPE: ["ennadecaDeco"],
+    },
+    {
+      POSITION: { SIZE: 17, ANGLE: 0, LAYER: 1 },
+      TYPE: ["ennadecaDeco2"],
+    },
+    {
+      POSITION: { SIZE: 15, ANGLE: 0, LAYER: 1 },
+      TYPE: ["ennadecaDeco3"],
+    },
+    {
+      POSITION: { SIZE: 13, ANGLE: 0, LAYER: 1 },
+      TYPE: ["ennadecaDeco4"],
+    },
+    {
+      POSITION: { SIZE: 11, ANGLE: 0, LAYER: 1 },
+      TYPE: ["ennadecaDeco5"],
+    },
+    {
+      POSITION: { SIZE: 9, ANGLE: 0, LAYER: 1 },
+      TYPE: ["ennadecaDeco6"],
+    },
+  ],
+  GUNS: [
+    ...weaponArray(
+      {
+        POSITION: [18, 8, 1, 0, 0, 152.3, 0],
+        PROPERTIES: {
+          ALPHA: 0,
+          SHOOT_SETTINGS: combineStats([g.basic]),
+          TYPE: "tridecamini",
+          MAX_CHILDREN: 1,
+          AUTOFIRE: true,
+        },
+      },
+      13
+    ),
+  ],
+};
 
 // Auto tanks
 Class.autoDouble = makeAuto("doubleTwin", "Auto-Double")

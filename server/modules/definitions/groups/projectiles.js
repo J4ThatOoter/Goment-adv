@@ -25,6 +25,31 @@ Class.splitterBullet = {
         },
     ]
 }
+Class.hextroSwarm = {
+    PARENT: ["autoswarm"],
+    LABEL: "Hextro Swarm",
+  COLOR: "#ff3737",
+   SHAPE: 6,
+  SIZE: 9.9,
+  LEVEL: 10,
+   SKILL: [10, 10, 5, 2, 7, 6, 5, 6, 5, 6],
+  BODY: {
+    HEALTH: 14.01,
+    SHIELD: 0.1,
+    SPEED: 8.5,
+   
+  },
+  CONTROLLERS: ["nearestDifferentMaster"],
+       GUNS: [
+        {
+            POSITION: [13, 9, 1, 0, 0, 0, 0],
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.basic]),
+                TYPE: "bullet", AUTOFIRE: true,              
+            },
+        },
+    ],
+}
 Class.superSplitterBullet = {
     PARENT: "bullet",
     INDEPENDENT: true,

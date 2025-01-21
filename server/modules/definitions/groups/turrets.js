@@ -309,6 +309,7 @@ Class.minigunTurret = makeTurret('minigun', {aiSettings: {SKYNET: true, FULL_VIE
 Class.gunnerTurret = makeTurret('gunner', {aiSettings: {SKYNET: true, FULL_VIEW: true, independent: true, extraStats: []}})
 Class.rifleTurret = makeTurret('rifle', {canRepel: true, limitFov: true, extraStats: []})
 Class.assemblerTurret = makeTurret('assembler', {canRepel: true, limitFov: true, extraStats: []})
+Class.spawnerTurret = makeTurret('spawner', {canRepel: true, limitFov: true, extraStats: []})
 Class.crowbarTurret = makeTurret({
     GUNS: [
         {

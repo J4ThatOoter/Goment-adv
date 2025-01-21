@@ -1405,7 +1405,64 @@ odin.addLayer({turret: {
     POSITION: [8, 9, 0, null, 160, 0],
     TYPE: "gunnerCruiserTurret",
 }}, true, 4.5);
-
+Class.eyerlayer1 = makeDeco(19, "#FA5858");
+Class.eyerlayer2 = makeDeco(18, "#FE2E2E");
+Class.eyerlayer3 = makeDeco(17, "#FF0000");
+Class.plaugeEyer = {
+  PARENT: ["tebasBoss"],
+  LABEL: "Eyer Plauge",
+  NAME: "Bubalic Plauge of the Eyer",
+  SHAPE: 20,
+  SIZE: 250,
+  COLOR: "#F5A9A9",
+  IS_SMASHER: true,
+  CONTROLLERS: ["nearestDifferentMaster"],
+  VALUE: 24585000,
+  INDEPENDENT: true,
+  BODY: {
+    HEALTH: 801400,
+    SHIELD: 0.58,
+    SPEED: 7.65,
+    DAMAGE: 33.33,
+  },
+  PROPS: [
+    {
+      POSITION: { SIZE: 19.5, X: 0, Y: 0, LAYER: 1 },
+      TYPE: ["eyerlayer1", { COLOR: "#FA5858" }],
+    },
+    {
+       POSITION: { SIZE: 17.5, X: 0, Y: 0, LAYER: 1 },
+      TYPE: ["eyerlayer2", { COLOR: "#FE2E2E" }],
+       },
+    {
+       POSITION: { SIZE: 15.5, X: 0, Y: 0, LAYER: 1 },
+      TYPE: ["eyerlayer3", { COLOR: "#FF0000" }],
+    },
+    {
+      POSITION: { SIZE: 15, X: 0, Y: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "black" }],
+    },
+    {
+      POSITION: { SIZE: 5, X: 4.5, Y: 0, LAYER: 1 },
+      TYPE: ["egg", { COLOR: "red", MIRROR_MASTER_ANGLE: true }],
+    },
+  ],
+      GUNS: [
+    ...weaponArray(
+      {
+        POSITION: [14, 4.5, 1, 0, 0, 360, 0],
+        PROPERTIES: {
+          ALPHA: 0,
+            SHOOT_SETTINGS: combineStats([g.basic]),
+          TYPE: ["eyer", { PERSISTS_AFTER_DEATH: true }],
+          MAX_CHILDREN: 1,
+                SHOOT_ON_DEATH: true,
+        },
+      },
+      8
+    ),
+  ],
+};
 // Developer Bosses
 Class.taureonCoreBase = {
     SHAPE: 4,
