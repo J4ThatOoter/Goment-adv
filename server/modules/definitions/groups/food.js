@@ -230,11 +230,11 @@ Class.heptagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.shinyHeptagon = makeRare(exports.heptagon, 0);
-exports.legendaryHeptagon = makeRare(exports.heptagon, 1);
-exports.shadowHeptagon = makeRare(exports.heptagon, 2);
-exports.rainbowHeptagon = makeRare(exports.heptagon, 3);
-exports.transHeptagon = makeRare(exports.heptagon, 4);
+Class.shinyHeptagon = makeRare(Class.heptagon, 0);
+Class.legendaryHeptagon = makeRare(Class.heptagon, 1);
+Class.shadowHeptagon = makeRare(Class.heptagon, 2);
+Class.rainbowHeptagon = makeRare(Class.heptagon, 3);
+Class.transHeptagon = makeRare(Class.heptagon, 4);
 Class.octagon = {
   VALUE: 2860,
   DISPLAY_NAME: true,
@@ -253,11 +253,11 @@ Class.octagon = {
   },
   DRAW_HEALTH: true,
 };
-Class.shinyOctagon = makeRare(exports.octagon, 0);
-exports.legendaryOctagon = makeRare(exports.octagon, 1);
-exports.shadowOctagon = makeRare(exports.octagon, 2);
-exports.rainbowOctagon = makeRare(exports.octagon, 3);
-exports.transOctagon = makeRare(exports.octagon, 4);
+Class.shinyOctagon = makeRare(Class.octagon, 0);
+Class.legendaryOctagon = makeRare(Class.octagon, 1);
+Class.shadowOctagon = makeRare(Class.octagon, 2);
+Class.rainbowOctagon = makeRare(Class.octagon, 3);
+Class.transOctagon = makeRare(Class.octagon, 4);
 Class.nonagon = {
   VALUE: 18800,
   PARENT: ["food"],
@@ -276,7 +276,7 @@ Class.nonagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.decagon = {
+Class.decagon = {
   VALUE: 52860,
   PARENT: ["food"],
   LABEL: "Decagon",
@@ -294,7 +294,7 @@ exports.decagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.hendecagon = {
+Class.hendecagon = {
   PARENT: ["food"],
   VALUE: 325000,
   SHAPE: 11,
@@ -312,7 +312,7 @@ exports.hendecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.dodecagon = {
+Class.dodecagon = {
   PARENT: ["food"],
   DISPLAY_NAME: true,
   VALUE: 325000,
@@ -330,7 +330,7 @@ exports.dodecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.tridecagon = {
+Class.tridecagon = {
   PARENT: ["food"],
   VALUE: 890000,
   LABEL: "Tridecagon",
@@ -348,7 +348,7 @@ exports.tridecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.tetradecagon = {
+Class.tetradecagon = {
   PARENT: ["food"],
   VALUE: 890000,
   SHAPE: 14,
@@ -366,7 +366,7 @@ exports.tetradecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.pentadecagon = {
+Class.pentadecagon = {
   VALUE: 6750000,
   DISPLAY_NAME: true,
   PARENT: ["food"],
@@ -384,7 +384,7 @@ exports.pentadecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.hexadecagon = {
+Class.hexadecagon = {
   VALUE: 24250000,
   PARENT: ["food"],
   SHAPE: 16,
@@ -402,7 +402,7 @@ exports.hexadecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.heptadecagon = {
+Class.heptadecagon = {
   VALUE: 194250000,
   PARENT: ["food"],
   SHAPE: 17,
@@ -420,7 +420,7 @@ exports.heptadecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.octadecagon = {
+Class.octadecagon = {
   VALUE: 194250000,
   PARENT: ["food"],
   DISPLAY_NAME: true,
@@ -438,7 +438,7 @@ exports.octadecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.ennadecagon = {
+Class.ennadecagon = {
   VALUE: 760250000,
   PARENT: ["food"],
   DISPLAY_NAME: true,
@@ -456,7 +456,7 @@ exports.ennadecagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosagon = {
+Class.icosagon = {
   VALUE: 3760250000,
   PARENT: ["food"],
   DISPLAY_NAME: true,
@@ -474,7 +474,7 @@ exports.icosagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaihenagon = {
+Class.icosikaihenagon = {
   VALUE: 11882906712,
   PARENT: ["food"],
   DISPLAY_NAME: true,
@@ -490,7 +490,7 @@ exports.icosikaihenagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaidigon = {
+Class.icosikaidigon = {
   VALUE: 55882906712,
   PARENT: ["food"],
   DISPLAY_NAME: true,
@@ -506,7 +506,7 @@ exports.icosikaidigon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaitrigon = {
+Class.icosikaitrigon = {
   VALUE: 102658909125,
   PARENT: ["food"],
   SHAPE: 23,
@@ -521,7 +521,7 @@ exports.icosikaitrigon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaitetragon = {
+Class.icosikaitetragon = {
   VALUE: 552658909125,
   PARENT: ["food"],
   SHAPE: 24,
@@ -536,7 +536,7 @@ exports.icosikaitetragon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaipentagon = {
+Class.icosikaipentagon = {
   VALUE: 1872658909125,
   PARENT: ["food"],
   SHAPE: 25,
@@ -551,7 +551,7 @@ exports.icosikaipentagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaihexagon = {
+Class.icosikaihexagon = {
   VALUE: 8872658909125,
   PARENT: ["food"],
   SHAPE: 26,
@@ -566,7 +566,7 @@ exports.icosikaihexagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaiheptagon = {
+Class.icosikaiheptagon = {
   VALUE: 68872658909125,
   PARENT: ["food"],
   SHAPE: 27,
@@ -581,7 +581,7 @@ exports.icosikaiheptagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaioctagon = {
+Class.icosikaioctagon = {
   VALUE: 128872658909125,
   PARENT: ["food"],
   SHAPE: 28,
@@ -596,7 +596,7 @@ exports.icosikaioctagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.icosikaiennagon = {
+Class.icosikaiennagon = {
   VALUE: 128872658909125,
   PARENT: ["food"],
   SHAPE: 29,
@@ -611,7 +611,7 @@ exports.icosikaiennagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.triacontagon = {
+Class.triacontagon = {
   VALUE: 12228872658909125,
   PARENT: ["food"],
   SHAPE: 30,
@@ -626,156 +626,7 @@ exports.triacontagon = {
   },
   DRAW_HEALTH: true,
 };
-exports.triacontakaihenagon = {
-  VALUE: 9912828872658909125,
-  PARENT: ["food"],
-  SHAPE: 31,
-  LABEL: "Triacontakaihenagon",
-  SIZE: 1698,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 20918,
-    HEALTH: 32020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaidigon = {
-  VALUE: 75112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 32,
-  LABEL: "Triacontakaidigon",
-  SIZE: 1812,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 70918,
-    HEALTH: 82020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaitrigon = {
-    VALUE: 195112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 33,
-  LABEL: "Triacontakaitrigon",
-  SIZE: 2064,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 170918,
-    HEALTH: 162020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaitetragon = {
-   VALUE: 541112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 34,
-  LABEL: "Triacontakaitetragon",
-   SIZE: 2381,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 670918,
-    HEALTH: 782020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaipentagon = {
-   VALUE: 1011112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 35,
-  LABEL: "Triacontakaipentagon",
-   SIZE: 2610,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 1970918,
-    HEALTH: 2282020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaihexagon = {
-   VALUE: 6711112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 36,
-  LABEL: "Triacontakaihexagon",
-   SIZE: 2872,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 22970918,
-    HEALTH: 116772020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaiheptagon = {
-     VALUE: 12171112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 37,
-  LABEL: "Triacontakaiheptagon",
-   SIZE: 3013,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 22970918,
-    HEALTH: 1986772020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaioctagon = {
-     VALUE: 79971112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 38,
-  LABEL: "Triacontakaioctagon",
-   SIZE: 3477,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 229170918,
-    HEALTH: 4786772020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.triacontakaienneagon = {
-   VALUE: 339971112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 39,
-  LABEL: "Triacontakaiennagon",
-   SIZE: 3891,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 42917092218,
-    HEALTH: 14786772020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
-exports.tetracontagon = {
-    VALUE: 6999971112828872658909125,
-  PARENT: ["food"],
-  SHAPE: 40,
-  LABEL: "Tetracontagon",
-   SIZE: 4691,
-  COLOR: "#2E2E2E",
-  BODY: {
-    DAMAGE: 427917092218,
-    HEALTH: 984786772020320000000,
-    PENETRATION: 50,
-    ACCELERATION: 0.005,
-  },
-  DRAW_HEALTH: true,
-};
+
 // 3D POLYGONS
 Class.sphere = {
     PARENT: "food",
