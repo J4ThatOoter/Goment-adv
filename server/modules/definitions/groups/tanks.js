@@ -5191,7 +5191,7 @@ Class.decaYellie = {
   PARENT: ["tebasMob"],
   LABEL: "DecaYellie",
   SHAPE: 10,
-  SIZE: 95,
+  SIZE: 120,
   CONTROLLERS: ["wanderAroundMap"],
   COLOR: "yellow",
   BODY: {
@@ -5200,17 +5200,17 @@ Class.decaYellie = {
     SPEED: 1.05,
     DAMAGE: 13,
   },
-  TURRETS: [
+  PROPS: [
    	 {
-   		 POSITION: [18, 3, 0, 0, 0, 1],
-   		 TYPE: 'decaYellieEyePupil',
+   		 POSITION: {SIZE: 10, X: 0, Y: 0, LAYER: 1},
+   		 TYPE: 'decaYellieEyePupil', 
      },
     {
-       POSITION: [9, 5, 0, 0, 0, 1],
+       POSITION: {SIZE: 5, X: 1.5, Y: 0, LAYER: 1},
    		 TYPE: 'decaYellieEye',
        },
     {
-       POSITION: [5, 5, 0, 0, 0, 1],
+       POSITION: {SIZE: 3, ANGLE: 45, X: -3.5, Y: -3.5, LAYER: 1},
    		 TYPE: 'decaYellieEyeLash',
      },
     ],
