@@ -304,6 +304,7 @@ Class.eliteSpinnerCyclone = {
 Class.barricadeTurret = makeTurret('barricade', {aiSettings: {SKYNET: true, FULL_VIEW: true, independent: true, extraStats: []}})
 Class.artilleryTurret = makeTurret('artillery', {canRepel: true, limitFov: true, extraStats: []})
 Class.nailgunTurret = makeTurret('nailgun', {canRepel: true, limitFov: true, extraStats: []})
+Class.xHunterTurret = makeTurret('xHunter', {canRepel: true, limitFov: true, extraStats: []})
 Class.crowbarTurret = makeTurret({
     GUNS: [
         {

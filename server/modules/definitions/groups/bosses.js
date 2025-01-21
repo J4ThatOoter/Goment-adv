@@ -1128,7 +1128,23 @@ ezekiel.addLayer({turret: {
     POSITION: [10, 7.5, 0, null, 160, 0],
     TYPE: [setTurretProjectileRecoil("skimmerTurret", 0.5), { COLOR: "grey", INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.5} }],
 }}, true, 6.5)
-
+let ezei = new LayeredBoss(null, "Ezei", "terrestrial", 7, "orange", "terrestrialTrapTurret", 7, 5.5);
+ezei.addLayer({gun: {
+    POSITION: [3.75, 7, 1.2, 8, 0, null, 0],
+    PROPERTIES: {
+		MAX_CHILDREN: 3,
+        SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.destroyer, {health: 1.2, damage: 1.1, resist: 1.1, density: 1.5, maxSpeed: 1.25}]),
+        TYPE: ["dorito", { COLOR: "orange", INDEPENDENT: true }],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: "drone",
+        WAIT_TO_CYCLE: true,
+    },
+}}, true, null, 18);
+ezei.addLayer({turret: {
+    POSITION: [10, 7.5, 0, null, 160, 0],
+    TYPE: ["xHunterTurret", { COLOR: "grey", INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.5} }],
+}}, true, 6.5)
 let eris = new LayeredBoss(null, "Eris", "terrestrial", 7, "pink", "terrestrialTrapTurret", 7, 5.5);
 eris.addLayer({gun: {
     POSITION: [3.75, 7, 1.2, 8, 0, null, 0],
