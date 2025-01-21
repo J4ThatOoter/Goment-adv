@@ -4109,7 +4109,7 @@ Class.hextlya = {
     {
       POSITION: [13, 9, 1, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic]),
+        SHOOT_SETTINGS: combineStats([g.basic, { pen: 0.335 }]),
         TYPE: "bullet",
       },
     },
@@ -4148,7 +4148,7 @@ Class.baddieDaughter = {
       TYPE: ["egg", { COLOR: "white",  MIRROR_MASTER_ANGLE: true,  CONTROLLERS: ["nearestDifferentMaster", { lookAtDanger: true }]}],
        },
     {
-       POSITION: { SIZE: 2.9, Y: 2, X: -4, ANGLE: -45, LAYER: 1 },
+       POSITION: { SIZE: 2.9, Y: 2, X: -4, ANGLE: 45, LAYER: 1 },
       TYPE: ["triangle", { COLOR: "black"}],
     },
   ],
@@ -4457,7 +4457,7 @@ Class.congo = {
     {
       POSITION: [13, 9, 1, 0, 0, 0, 0],
       PROPERTIES: {
-        SHOOT_SETTINGS: combineStats([g.basic]),
+        SHOOT_SETTINGS: combineStats([g.basic, { damage: 1.25, pen: 0.4, speed: 0.7 }]),
         TYPE: "bullet",
       },
     },
