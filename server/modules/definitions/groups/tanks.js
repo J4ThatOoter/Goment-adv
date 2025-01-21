@@ -5183,16 +5183,21 @@ Class.tridecamini = {
     ),
   ],
 };
+Class.decaYellieEyePupil = makeDeco(0, "black"),
+  Class.decaYellieEyeEye = makeDeco(0, "white"),
+  Class.decaYellieEyePupil = makeDeco(3, "black"),
+  
 Class.decaYellie = {
   PARENT: ["tebasMob"],
   LABEL: "DecaYellie",
   SHAPE: 10,
   SIZE: 205,
+  CONTROLLERS: ["wanderAroundMap"],
   COLOR: "yellow",
   BODY: {
-    HEALTH: 336000,
+    HEALTH: 33600,
     SHIELD: 0.3,
-    SPEED: 0.001,
+    SPEED: 1.05,
     DAMAGE: 13,
   },
 };
