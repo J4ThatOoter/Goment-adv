@@ -5184,8 +5184,8 @@ Class.tridecamini = {
   ],
 };
 Class.decaYellieEyePupil = makeDeco(0, "black"),
-  Class.decaYellieEyeEye = makeDeco(0, "white"),
-  Class.decaYellieEyePupil = makeDeco(3, "black"),
+  Class.decaYellieEye = makeDeco(0, "white"),
+  Class.decaYellieEyeLash = makeDeco(3, "black"),
   
 Class.decaYellie = {
   PARENT: ["tebasMob"],
@@ -5200,6 +5200,20 @@ Class.decaYellie = {
     SPEED: 1.05,
     DAMAGE: 13,
   },
+  PROPS: [
+    {
+       POSITION: { SIZE: 14, ANGLE: 0, LAYER: 1 },
+      TYPE: ["decaYelliePupil"],
+    },
+    {
+         POSITION: { SIZE: 8.5, ANGLE: 0, LAYER: 1 },
+      TYPE: ["decaYellieEye"],
+      },
+    {
+         POSITION: { SIZE: 8.5, ANGLE: 0, X: -2, Y: 4, LAYER: 1 },
+      TYPE: ["decaYellieEyeLash"],
+    },
+  ],
 };
 Class.ennadecaDeco = makeDeco(18, "#A32FAB");
 Class.ennadecaDeco2 = makeDeco(17, "#AB33B3");
