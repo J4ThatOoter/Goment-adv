@@ -7,7 +7,7 @@ const settings = {
         deathBlurAmount: 3,
         darkBorders: false,
         fancyAnimations: true,
-        lowResolution: false,
+        lowResolution: true,
         colors: 'normal',
         pointy: true,
         showGrid: true,

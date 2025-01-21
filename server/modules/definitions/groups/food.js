@@ -276,6 +276,11 @@ Class.nonagon = {
   },
   DRAW_HEALTH: true,
 };
+Class.shinyNonagon = makeRare(Class.nonagon, 0);
+Class.legendaryNonagon = makeRare(Class.nonagon, 1);
+Class.shadowNonagon = makeRare(Class.nonagon, 2);
+Class.rainbowNonagon = makeRare(Class.nonagon, 3);
+Class.transNonagon = makeRare(Class.nonagon, 4);
 Class.decagon = {
   VALUE: 52860,
   PARENT: ["food"],
@@ -811,7 +816,7 @@ Class.tesseract = {
 };
 
 // LABY
-let polyNames = [ "egg", "square", "triangle", "pentagon", "hexagon" ],
+let polyNames = [ "egg", "square", "triangle", "pentagon", "hexagon", "heptagon", "octagon", "nonagon" ],
     shinyNames = [ "", "shiny", "legendary", "shadow", "rainbow", "trans" ];
 for (let tier = 0; tier < 6; tier++) {
     for (let poly in polyNames) {
