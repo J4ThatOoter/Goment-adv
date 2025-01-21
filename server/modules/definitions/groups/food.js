@@ -137,8 +137,6 @@ Class.legendaryPentagon = makeRare("pentagon", 1);
 Class.shadowPentagon = makeRare("pentagon", 2);
 Class.rainbowPentagon = makeRare("pentagon", 3);
 Class.transPentagon = makeRare("pentagon", 4);
-
-// BETA PENTAGONS
 Class.betaPentagon = {
     PARENT: "food",
     LABEL: "Beta Pentagon",
