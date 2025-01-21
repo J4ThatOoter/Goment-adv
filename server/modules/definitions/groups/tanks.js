@@ -5183,7 +5183,19 @@ Class.tridecamini = {
     ),
   ],
 };
-
+Class.decaYellie = {
+  PARENT: ["tebasMob"],
+  LABEL: "DecaYellie",
+  SHAPE: 10,
+  SIZE: 205,
+  COLOR: "yellow",
+  BODY: {
+    HEALTH: 336000,
+    SHIELD: 0.3,
+    SPEED: 0.001,
+    DAMAGE: 13,
+  },
+};
 Class.ennadecaDeco = makeDeco(18, "#A32FAB");
 Class.ennadecaDeco2 = makeDeco(17, "#AB33B3");
 Class.ennadecaDeco3 = makeDeco(16, "#CD3DD6");
