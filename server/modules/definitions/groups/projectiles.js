@@ -536,6 +536,26 @@ Class.tinyMinion = {
     DIE_AT_RANGE: true,
     BUFF_VS_FOOD: true,
 }
+Class.landmineMinion = {
+    PARENT: ["minion"],
+    LABEL: "Landmine",
+  IS_SMASHER: true,
+  DRAW_HEALTH: true,
+    BODY: {
+      HEALTH: 2.5,
+        SPEED: 1.1 * base.SPEED
+    },
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "smasherBody"
+        },
+        {
+            POSITION: [21.5, 0, 0, 30, 360, 0],
+            TYPE: "landmineBody"
+        }
+    ]
+}
 Class.sentrySwarmMinion = {
     PARENT: 'drone',
     LABEL: 'sentry',

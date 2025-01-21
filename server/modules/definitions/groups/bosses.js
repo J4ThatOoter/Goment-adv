@@ -1161,7 +1161,23 @@ eris.addLayer({turret: {
     POSITION: [10, 8.5, 0, null, 160, 0],
     TYPE: [setTurretProjectileRecoil("rocketeerTurret", 0.43), { INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.43} }],
 }}, true, 6.5);
-
+let derit = new LayeredBoss(null, "Derit", "terrestrial", 7, "pink", "terrestrialTrapTurret", 7, 5.5);
+derit.addLayer({gun: {
+    POSITION: [3.75, 7, 0.7, 8, 0, null, 0],
+    PROPERTIES: {
+		MAX_CHILDREN: 3,
+        SHOOT_SETTINGS: combineStats([g.factory, { size: 0.7, maxSpeed: 0.85, damage: 0.8 }]),
+        TYPE: ["landmineMinion", { INDEPENDENT: true, COLOR: "pink" }],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: "drone",
+        WAIT_TO_CYCLE: true,
+    },
+}}, false, null, 7);
+derit.addLayer({turret: {
+    POSITION: [10, 8.5, 0, null, 160, 0],
+    TYPE: [setTurretProjectileRecoil("rocketeerTurret", 0.43), { INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.43} }],
+}}, true, 6.5);
 let selene = new LayeredBoss(null, "Selene", "terrestrial", 7, "gold", "terrestrialTrapTurret", 7, 5.5);
 selene.addLayer({gun: {
     POSITION: [3.75, 7, 1.2, 8, 0, null, 0],
@@ -1178,7 +1194,23 @@ selene.addLayer({turret: {
     POSITION: [10, 7.5, 0, null, 160, 0],
     TYPE: ["hyperTwisterTurret", { INDEPENDENT: true }],
 }}, true, 6.5);
-
+let selenah = new LayeredBoss(null, "Selenah", "terrestrial", 7, "gold", "terrestrialTrapTurret", 7, 5.5);
+selenah.addLayer({gun: {
+    POSITION: [3.75, 7, 1.2, 8, 0, null, 0],
+    PROPERTIES: {
+		MAX_CHILDREN: 3,
+        SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.destroyer, {health: 1.04, damage: 1.05, resist: 1.1, density: 1.5, maxSpeed: 1.75}]),
+        TYPE: ["summonerDrone", { COLOR: "gold", INDEPENDENT: true }],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+        STAT_CALCULATOR: "drone",
+        WAIT_TO_CYCLE: true,
+    },
+}}, true, null, 18);
+selenah.addLayer({turret: {
+    POSITION: [10, 7.5, 0, null, 160, 0],
+    TYPE: ["rifleTurret", { INDEPENDENT: true }],
+}}, true, 6.5);
 // PALADIN
 let paladin = new LayeredBoss(null, "Paladin", "celestial", 9, "purple", "baseTrapTurret", 6.5, 5.5);
 paladin.addLayer({gun: {
@@ -1223,7 +1255,21 @@ zaphkiel.addLayer({turret: {
     POSITION: [10, 7.5, 0, null, 160, 0],
     TYPE: [setTurretProjectileRecoil("skimmerTurret", 0.65), {COLOR: "grey", INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.65}}],
 }}, true, 6);
-
+let zapia = new LayeredBoss(null, "Zapia", "celestial", 9, "orange", "baseTrapTurret", 6.5, 5.5);
+zapia.addLayer({gun: {
+    POSITION: [3.8, 6, 1.4, 8, 0, null, 0],
+    PROPERTIES: {
+		MAX_CHILDREN: 3,
+        SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.destroyer, {health: 1.4, damage: 1.4, resist: 1.2, density: 1.8, maxSpeed: 1.325}]),
+        TYPE: ["dorito", {INDEPENDENT: true}],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+    },
+}}, true, null, 16);
+zapia.addLayer({turret: {
+    POSITION: [10, 7.5, 0, null, 160, 0],
+    TYPE: ["minigunTurret", {COLOR: "grey", INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.65}}],
+}}, true, 6);
 // NYX
 let nyx = new LayeredBoss(null, "Nyx", "celestial", 9, "pink", "baseTrapTurret", 6.5, 5.5);
 nyx.addLayer({gun: {
