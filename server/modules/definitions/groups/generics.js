@@ -171,7 +171,7 @@ Class.tebasMob = {
     TYPE: "miniboss",
     DANGER: 9,
   DISPLAY_NAME: true,
-  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal", "wanderAroundMap"],
     SKILL: skillSet({
         rld: 0.7,
         dam: 0.7,
@@ -192,7 +192,7 @@ Class.tebasBoss = {
     TYPE: "miniboss",
     DANGER: 9,
   DISPLAY_NAME: true,
-  CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal"],
+   CONTROLLERS: ["nearestDifferentMaster", "mapTargetToGoal", "wanderAroundMap"],
     SKILL: skillSet({
         rld: 0.9,
         dam: 0.8,
