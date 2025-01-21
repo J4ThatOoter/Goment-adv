@@ -230,6 +230,9 @@ Class.heptagon = {
   },
   DRAW_HEALTH: true,
 };
+Class.betaHeptagon = makeLaby(Class.heptagon, 1);
+Class.alphaHeptagon = makeLaby(Class.heptagon, 2);
+Class.omegaHeptagon = makeLaby(Class.heptagon, 3);
 Class.shinyHeptagon = makeRare(Class.heptagon, 0);
 Class.legendaryHeptagon = makeRare(Class.heptagon, 1);
 Class.shadowHeptagon = makeRare(Class.heptagon, 2);
