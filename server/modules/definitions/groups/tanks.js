@@ -5186,24 +5186,7 @@ Class.tridecamini = {
 Class.decaYellieEyePupil = makeDeco(0, "black"),
   Class.decaYellieEye = makeDeco(0, "white"),
   Class.decaYellieEyeLash = makeDeco(3, "black"),
-  Class.DecaYelliesEye = {
-  PARENT: ["genericTank"],
-  LABEL: "Passion Eye",
-   PROPS: [
-    {
-       POSITION: { SIZE: 1.5, ANGLE: -45, X: -1.5, Y: -1.5, LAYER: 1 },
-      TYPE: ["decaYellieEyeLash"],
-    },
-    {
-         POSITION: { SIZE: 4.5, ANGLE: 0, LAYER: 1 },
-      TYPE: ["decaYellieEyePupil"],
-      },
-    {
-         POSITION: { SIZE: 2, ANGLE: 0, X: 0.31, LAYER: 1 },
-      TYPE: ["decaYellieEye"],
-    },
-  ],
-};
+  
 Class.decaYellie = {
   PARENT: ["tebasMob"],
   LABEL: "DecaYellie",
@@ -5217,6 +5200,20 @@ Class.decaYellie = {
     SPEED: 1.05,
     DAMAGE: 13,
   },
+  TURRETS: [
+   	 {
+   		 POSITION: [18, 3, 0, 0, 0, 1],
+   		 TYPE: 'decaYellieEyePupil',
+     },
+    {
+       POSITION: [9, 5, 0, 0, 0, 1],
+   		 TYPE: 'decaYellieEye',
+       },
+    {
+       POSITION: [5, 5, 0, 0, 0, 1],
+   		 TYPE: 'decaYellieEyeLash',
+     },
+    ],
 };
 Class.ennadecaDeco = makeDeco(18, "#A32FAB");
 Class.ennadecaDeco2 = makeDeco(17, "#AB33B3");
