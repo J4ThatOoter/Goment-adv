@@ -3,7 +3,7 @@ module.exports = {
 
     // Game server domain.
     // If the host is 'localhost:NUMBER', the NUMBER must be the port setting.
-    host: "level-admitted-trampoline.glitch.me",
+    host: "goment-adv.glitch.me",
 
     // Which port to run the web server on.
     port: 8080,
