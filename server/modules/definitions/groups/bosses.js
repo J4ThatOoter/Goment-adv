@@ -1285,6 +1285,20 @@ nyx.addLayer({turret: {
     POSITION: [10, 7.5, 0, null, 160, 0],
     TYPE: [setTurretProjectileRecoil("rocketeerTurret", 0.5), { INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.5} }],
 }}, true, 6);
+let nyu = new LayeredBoss(null, "Nyu", "celestial", 9, "pink", "baseTrapTurret", 6.5, 5.5);
+nyu.addLayer({gun: {
+    POSITION: [3.8, 7, -1.4, 8, 0, null, 0],
+    PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.factory, { size: 0.7, maxSpeed: 0.85, damage: 0.8 }]),
+        TYPE: ["sentryGunMinion", {INDEPENDENT: true,}],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+    },
+}}, true, null, 16);
+nyu.addLayer({turret: {
+    POSITION: [10, 7.5, 0, null, 160, 0],
+    TYPE: ["assemblerTurret", { INDEPENDENT: true, GUN_STAT_SCALE: {maxSpeed: 0.5} }],
+}}, true, 6);
 
 // THEIA
 let theia = new LayeredBoss(null, "Theia", "celestial", 9, "gold", "baseTrapTurret", 6.5, 5.5);
