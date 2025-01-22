@@ -6,7 +6,7 @@ module.exports = {
     host: "goment-adv.glitch.me",
 
     // Which port to run the web server on.
-    port: 8080,
+    port: 8000,
 
     // How often to update the list of the entities that players can see.
     // Has effects of when entities are activated.
