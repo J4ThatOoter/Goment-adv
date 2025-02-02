@@ -1,6 +1,5 @@
 module.exports = ({ Config }) => {
 	// To enable this addon, simply comment out the line below.
-	return console.log('[labyFood.js] Addon disabled by default');
 
 	const disableCrashers = false;
 
@@ -8,8 +7,6 @@ module.exports = ({ Config }) => {
 	Config.ENEMY_CAP_NEST = 0;
 
 	// Constructs a four-dimensional array of shape types
-
-	// 3-wide dimension of the 3 base shape types - egg, square, triangle
 	Config.FOOD_TYPES = Array(3).fill().map((_, i, a) => [
 		// Chance of spawning in exponents of 4
 		4 ** (a.length - i),
@@ -22,7 +19,6 @@ module.exports = ({ Config }) => {
 				// Chance of spawning, set to 200mil for regular polygons and exponents of 10 otherwise
 				k ? 10 ** (c.length - k - 1) : 200_000_000,
 
-				
 				disableCrashers ? // no crashers
 					`laby_${j}_${i}_${k}_0`
 				: // 2-wide dimension of the 2 shape "ranks" - normal, crasher
@@ -30,9 +26,6 @@ module.exports = ({ Config }) => {
 			])
 		])
 	]);
-
-
-	//laby_${poly}_${tier}_${shiny}_${rank}
 
 	// 2-wide dimension of the 2 base shape types - pentagon, hexagon
 	Config.FOOD_TYPES_NEST = Array(2).fill().map((_, i, a) => [
@@ -47,7 +40,6 @@ module.exports = ({ Config }) => {
 				// Chance of spawning, set to 200mil for regular polygons and exponents of 10 otherwise
 				k ? 10 ** (c.length - k - 1) : 200_000_000,
 
-				
 				disableCrashers ? // no crashers
 					`laby_${i+3}_${j}_${k}_0`
 				: // 2-wide dimension of the 2 shape "ranks" - normal, crasher
@@ -57,4 +49,25 @@ module.exports = ({ Config }) => {
 	]);
 
 	console.log('[labyFood.js] Using Labyrinth Food.');
+
+	// Define shapes with Class
+	const shapes = ['triangle', 'pentagon', 'hexagon'];
+	const tiers = ['normal', 'beta', 'alpha', 'omega', 'delta'];
+	const rarities = ['normal', 'rare', 'epic', 'legendary', 'trans'];
+
+	shapes.forEach((shape, i) => {
+		tiers.forEach((tier, j) => {
+			rarities.forEach((rarity, k) => {
+				Class[`laby_${shape}_${tier}_${rarity}`] = {
+					PARENT: "drone",
+					PROPS: [
+						{
+							POSITION: [10, 0, 0, 180, 1],
+							TYPE: [shape, {COLOR: -1}],
+						},
+					]
+				};
+			});
+		});
+	});
 };
