@@ -201,6 +201,106 @@ Class.trapper = {
         }
     ]
 }
+Class.twinTrapper = {
+    PARENT: "genericTank",
+    LABEL: "Twin Trapper",
+    STAT_NAMES: statnames.trap,
+    GUNS: [
+        {
+            POSITION: {
+                LENGTH: 15,
+                WIDTH: 7,
+              Y: 5.5,
+            }
+        },
+        {
+            POSITION: {
+                LENGTH: 3,
+                WIDTH: 7,
+                ASPECT: 1.7,
+                X: 15,
+                Y: 5.5,
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap"
+            },
+        },
+      {
+         POSITION: {
+                LENGTH: 15,
+                WIDTH: 7,
+              Y: -5.5,
+            }
+        },
+        {
+            POSITION: {
+                LENGTH: 3,
+                WIDTH: 7,
+                ASPECT: 1.7,
+                X: 15,
+                Y: -5.5,
+              DELAY: 1/2,
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap"
+            }
+        }
+    ]
+}
+Class.doubleTwinTrapper = {
+    PARENT: "genericTank",
+    LABEL: "Double Twin Trapper",
+    STAT_NAMES: statnames.trap,
+    GUNS: weaponArray([
+        {
+            POSITION: {
+                LENGTH: 15,
+                WIDTH: 7,
+              Y: 5.5,
+            }
+        },
+        {
+            POSITION: {
+                LENGTH: 3,
+                WIDTH: 7,
+                ASPECT: 1.7,
+                X: 15,
+                Y: 5.5,
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap"
+            },
+        },
+      {
+         POSITION: {
+                LENGTH: 15,
+                WIDTH: 7,
+              Y: -5.5,
+            }
+        },
+        {
+            POSITION: {
+                LENGTH: 3,
+                WIDTH: 7,
+                ASPECT: 1.7,
+                X: 15,
+                Y: -5.5,
+              DELAY: 1/2,
+            },
+            PROPERTIES: {
+                SHOOT_SETTINGS: combineStats([g.trap]),
+                TYPE: "trap",
+                STAT_CALCULATOR: "trap"
+            }
+        }, 
+    ], 2),
+}
 Class.desmos = {
     PARENT: "genericTank",
     LABEL: "Desmos",
