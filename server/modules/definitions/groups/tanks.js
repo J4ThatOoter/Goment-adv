@@ -5464,4 +5464,8 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
 //Mob Classes
 Class.hextro.UPGRADES_TIER_1 = ["congo"]
-Class.hextro.UPGRADES_TIER_2 = ["congo"]
+Class.congo.UPGRADES_TIER_2 = ["cameroon"]
+Class.cameroon.UPGRADES_TIER_3 = ["mesopotamia"]
+Class.megahextro.UPGRADES_TIER_3 = ["elderhextro"]
+Class.hextro.UPGRADES_TIER_2 = ["megahextro", "cameroon"]
+Class.hextro.UPGRADES_TIER_4 = ["elderhextro", "mesopotamia"]
