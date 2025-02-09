@@ -2,7 +2,6 @@ const { combineStats, makeAuto, makeOver, makeDeco, makeGuard, makeBird, makeRad
 const { base, statnames, dfltskl, smshskl } = require('../constants.js');
 require('./generics.js');
 const g = require('../gunvals.js');
-
 // Basic & starting upgrades
 Class.basic = {
     PARENT: "genericTank",
@@ -5463,3 +5462,6 @@ Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "di
         Class.sidewinder.UPGRADES_TIER_3 = ["coil", "python", "ranch", "oroboros", "cocci"]
         Class.undertow.UPGRADES_TIER_3 = ["riptide"]
         Class.repeater.UPGRADES_TIER_3 = ["iterator", "duplicator"]
+//Mob Classes
+Class.hextro.UPGRADES_TIER_1 = ["congo"]
+Class.hextro.UPGRADES_TIER_2 = ["congo"]
