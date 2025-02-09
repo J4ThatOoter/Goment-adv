@@ -5398,6 +5398,17 @@ Class.autoSmasher = makeAuto({
     ],
     SKILL_CAP: [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl]
 }, "Auto-Smasher", {type: "autoSmasherTurret", size: 11})
+Class.autoSpike = makeAuto({
+    PARENT: "spike",
+    DANGER: 6,
+    TURRETS: [
+        {
+            POSITION: [21.5, 0, 0, 0, 360, 0],
+            TYPE: "spikeBody"
+        }
+    ],
+    SKILL_CAP: [smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl, smshskl]
+}, "Auto-Spike", {type: "autoSmasherTurret", size: 11})
 
 // Upgrade Paths
 Class.basic.UPGRADES_TIER_1 = ["twin", "sniper", "machineGun", "flankGuard", "director", "pounder", "trapper", "desmos"]
