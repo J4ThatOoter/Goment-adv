@@ -1433,6 +1433,44 @@ bid.addLayer({turret: {
     TYPE: "skimmerTurret",
 }}, true, 2.5);
 
+
+let ruled = new LayeredBoss(null, "Ruled", "eternal", 21, "pink", "baseTrapTurret", 3.5, 3.5);
+ruled.addLayer({gun: {
+    POSITION: [2.25, 3.25, -1.6, 9, 0, null, 0],
+    PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.pounder, g.destroyer, {speed: 1.25, maxSpeed: 1.35}]),
+        TYPE: ["nyx", {INDEPENDENT: true, DRAW_HEALTH: true, COLOR: 'pink'}],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+    },
+}}, true, null, 2);
+ruled.addLayer({turret: {
+    POSITION: [7, 8, 0, null, 160, 0],
+    TYPE: "skimmerTurret",
+}}, true, 5.5);
+ruled.addLayer({turret: {
+    POSITION: [7, 8, 0, null, 160, 0],
+    TYPE: "forkTurret",
+}}, true, 5);
+ruled.addLayer({turret: {
+    POSITION: [7, 8, 0, null, 160, 0],
+    TYPE: "carrierTurret",
+}}, true, 4.5);
+ruled.addLayer({turret: {
+    POSITION: [7, 8, 0, null, 160, 0],
+    TYPE: "carrierTurret",
+}}, true, 4);
+ruled.addLayer({turret: {
+    POSITION: [7, 8, 0, null, 160, 0],
+    TYPE: "rifleTurret",
+}}, true, 3.5);
+ruled.addLayer({turret: {
+    POSITION: [7, 8, 0, null, 160, 0],
+    TYPE: "forkTurret",
+}}, true, 3);
+
+
+
 Class.eyerlayer1 = makeDeco(19, "#FA5858");
 Class.eyerlayer2 = makeDeco(18, "#FE2E2E");
 Class.eyerlayer3 = makeDeco(17, "#FF0000");
