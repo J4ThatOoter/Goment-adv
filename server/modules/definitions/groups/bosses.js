@@ -1434,7 +1434,7 @@ bid.addLayer({turret: {
 }}, true, 2.5);
 
 
-let ruled = new LayeredBoss(null, "Ruled", "eternal", 21, "pink", "baseTrapTurret", 3.5, 3.5);
+let ruled = new LayeredBoss(null, "Ruled", "eternal", 21, "pink", "baseTrapTurret", 2.5, 2.5);
 ruled.addLayer({gun: {
     POSITION: [2.25, 3.25, -1.6, 9, 0, null, 0],
     PROPERTIES: {
