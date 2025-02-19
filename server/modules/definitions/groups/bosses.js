@@ -1405,6 +1405,34 @@ odin.addLayer({turret: {
     POSITION: [8, 9, 0, null, 160, 0],
     TYPE: "gunnerCruiserTurret",
 }}, true, 4.5);
+
+let bid = new LayeredBoss(null, "Bid", "eternal", 15, "black", "baseTrapTurret", 3.5, 3.5);
+bid.addLayer({gun: {
+    POSITION: [2.25, 3.25, -1.6, 9, 0, null, 0],
+    PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.pounder, g.destroyer, {speed: 1.25, maxSpeed: 1.35}]),
+        TYPE: ["drone", {INDEPENDENT: true, DRAW_HEALTH: true, COLOR: 'black'}],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+    },
+}}, true, null, 18);
+bid.addLayer({turret: {
+    POSITION: [7, 8, 0, null, 160, 0],
+    TYPE: "autoTankGun",
+}}, true, 5.5);
+bid.addLayer({turret: {
+    POSITION: [8, 9, 0, null, 160, 0],
+    TYPE: "cruiserTurret",
+}}, true, 4.5);
+bid.addLayer({turret: {
+    POSITION: [8, 9, 0, null, 160, 0],
+    TYPE: "carrierTurret",
+}}, true, 3.5);
+bid.addLayer({turret: {
+    POSITION: [8, 9, 0, null, 160, 0],
+    TYPE: "skimmerTurret",
+}}, true, 2.5);
+
 Class.eyerlayer1 = makeDeco(19, "#FA5858");
 Class.eyerlayer2 = makeDeco(18, "#FE2E2E");
 Class.eyerlayer3 = makeDeco(17, "#FF0000");
