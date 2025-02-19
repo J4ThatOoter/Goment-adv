@@ -1083,6 +1083,23 @@ Class.eternal = {
         DAMAGE: 18,
     },
 };
+Class.essentiornal = {
+    PARENT: "miniboss",
+    LABEL: "Essentiornal",
+    SKILL: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
+    VALUE: 9e6,
+    SHAPE: 13,
+    SIZE: 210,
+    CONTROLLERS: [["minion", {orbit: 240}]],
+    BODY: {
+        FOV: 1.2,
+        HEALTH: 13000,
+        SHIELD: 150,
+        REGEN: base.REGEN * 0.1,
+        SPEED: base.SPEED * 0.15,
+        DAMAGE: 20,
+    },
+};
 
 // Terrestrials
 let ares = new LayeredBoss(null, "Ares", "terrestrial", 7, "purple", "terrestrialTrapTurret", 7, 5.5);
@@ -1432,6 +1449,114 @@ bid.addLayer({turret: {
     POSITION: [8, 9, 0, null, 160, 0],
     TYPE: "skimmerTurret",
 }}, true, 2.5);
+
+let sanchez = new LayeredBoss(null, "Sanchez", "essentiornal", 14, "grey", "baseTrapTurret", 4.5, 3.5);
+sanchez.addLayer({gun: {
+    POSITION: [2.25, 2.55, -1.6, 9, 0, null, 0],
+    PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.summoner, g.pounder, g.destroyer, {speed: 1.245, maxSpeed: 1.325, damage: 1.9}]),
+        TYPE: ["drone", {INDEPENDENT: true, DRAW_HEALTH: true, COLOR: 'grey'}],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+    },
+}}, true, null, 25);
+sanchez.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: "assemblerTurret",
+}}, true, 5.5);
+sanchez.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: "minigunTurret",
+}}, true, 4.5);
+sanchez.addLayer({turret: {
+    POSITION: [8.5, 9, 0, null, 160, 0],
+    TYPE: "xHunterTurret", 
+}}, true, 3.5);
+sanchez.addLayer({turret: {
+    POSITION: [10.5, 9, 0, null, 160, 0],
+    TYPE: "autoTankGun",
+}}, true, 2.5);
+
+let suffer = new LayeredBoss(null, "Suffer", "essentiornal", 14, "red", "baseTrapTurret", 4.5, 3.5);
+suffer.addLayer({gun: {
+    POSITION: [2.25, 2.55, 1.2, 9, 0, null, 0],
+    PROPERTIES: {
+        SHOOT_SETTINGS: combineStats([g.drone, g.pounder, g.destroyer, {health: 3.1, speed: 0.645, maxSpeed: 1.150, damage: 2}]),
+        TYPE: ["landmineMinion", {INDEPENDENT: true, DRAW_HEALTH: true, COLOR: 'red'}],
+        AUTOFIRE: true,
+        SYNCS_SKILLS: true,
+    },
+}}, true, null, 14);
+suffer.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["spawnerTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 5.5);
+suffer.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["cruiserTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 4.5);
+suffer.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["gunnerTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 3.5);
+suffer.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["skimmerTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 2.5);
+
+let phane = new LayeredBoss(null, "Phane", "essentiornal", 18, "black", "baseTrapTurret", 2.5, 2.5);
+phane.addLayer({turret: {
+    POSITION: [3.5, 9, 0, null, 160, 0],
+    TYPE: ["nailgunTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}});
+phane.addLayer({turret: {
+    POSITION: [3.5, 9, 0, null, 160, 0],
+    TYPE: ["autoSmasherLauncherTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 5.5);
+phane.addLayer({turret: {
+    POSITION: [3.5, 9, 0, null, 160, 0],
+    TYPE: ["cruiserTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 4.5);
+phane.addLayer({turret: {
+    POSITION: [3.5, 9, 0, null, 160, 0],
+    TYPE: ["launcherTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 3.5);
+phane.addLayer({turret: {
+    POSITION: [4.5, 9, 0, null, 160, 0],
+    TYPE: ["skimmerTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 2.5);
+phane.addLayer({turret: {
+    POSITION: [4.5, 9, 0, null, 160, 0],
+    TYPE: ["rocketeerTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+}}, true, 1.5);
+
+let atlantic = new LayeredBoss(null, "Atlantic", "essentiornal", 13, "purple", "baseTrapTurret", 4, 5.5);
+atlantic.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: "assemblerTurret",
+}});
+atlantic.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: "minigunTurret",
+}}, true, 4);
+atlantic.addLayer({turret: {
+    POSITION: [8.5, 9, 0, null, 160, 0],
+    TYPE: "artilleryTurret", 
+}}, true, 4);
+atlantic.addLayer({turret: {
+    POSITION: [10.5, 9, 0, null, 160, 0],
+    TYPE: "assemblerTurret",
+}}, true, 4);
+
+let delequant = new LayeredBoss(null, "Delequant", "essentiornal", 13, "orange", "baseTrapTurret", 4, 5.5);
+delequant.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["minigunTurret", {GUN_STAT_SCALE: {health: 1.7, damage: 1.995, resist: 1.35, speed: 1.15}}]
+}});
+delequant.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["minigunTurret", {GUN_STAT_SCALE: {health: 1.7, damage: 1.995, resist: 1.35, speed: 1.15}}]
+}}, true, 4);
 
 
 let ruled = new LayeredBoss(null, "Ruled", "eternal", 21, "pink", "baseTrapTurret", 2.5, 2.5);
