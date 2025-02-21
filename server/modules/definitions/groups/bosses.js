@@ -1559,7 +1559,7 @@ delequant.addLayer({turret: {
 }}, true, 4);
 
 
-let ruled = new LayeredBoss(null, "Ruled", "essentiornal", 21, "pink", "baseTrapTurret", 2.5, 2.5);
+let ruled = new LayeredBoss(null, "Ruled", "essentiornal", 27, "pink", "baseTrapTurret", 2.5, 2.5);
 ruled.addLayer({turret: {
     POSITION: [2.5, 8, 0, null, 160, 0],
     TYPE: "skimmerTurret",
