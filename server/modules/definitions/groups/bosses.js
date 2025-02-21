@@ -1511,7 +1511,7 @@ phane.addLayer({turret: {
 }});
 phane.addLayer({turret: {
     POSITION: [3.5, 9, 0, null, 160, 0],
-    TYPE: ["autoSmasherLauncherTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
+    TYPE: ["cruiserTurret", {GUN_STAT_SCALE: {health: 1.9, damage: 1.655, resist: 1.35, speed: 1.15}}]
 }}, true, 5.5);
 phane.addLayer({turret: {
     POSITION: [3.5, 9, 0, null, 160, 0],
@@ -1559,13 +1559,17 @@ delequant.addLayer({turret: {
 }}, true, 4);
 
 
-let delequant = new LayeredBoss(null, "Delequant", "essentiornal", 13, "orange", "baseTrapTurret", 4, 5.5);
-delequant.addLayer({turret: {
+let villanle = new LayeredBoss(null, "Villanle", "essentiornal", 13, "gold", "baseTrapTurret", 4, 5.5);
+villanle.addLayer({turret: {
     POSITION: [6.5, 9, 0, null, 160, 0],
     TYPE: ["minigunTurret", {GUN_STAT_SCALE: {health: 1.7, damage: 1.995, resist: 1.35, speed: 1.15}}]
 }});
-delequant.addLayer({turret: {
-    POSITION: [6.5, 9, 0, null, 160, 0],
+villanle.addLayer({turret: {
+    POSITION: [5.5, 9, 0, null, 160, 0],
+    TYPE: ["nailgunTurret", {GUN_STAT_SCALE: {health: 1.7, damage: 1.995, resist: 1.35, speed: 1.15}}]
+}}, true, 4);
+villanle.addLayer({turret: {
+    POSITION: [4.5, 9, 0, null, 160, 0],
     TYPE: ["minigunTurret", {GUN_STAT_SCALE: {health: 1.7, damage: 1.995, resist: 1.35, speed: 1.15}}]
 }}, true, 4);
 
