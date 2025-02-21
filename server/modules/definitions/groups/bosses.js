@@ -1559,35 +1559,17 @@ delequant.addLayer({turret: {
 }}, true, 4);
 
 
-let ruled = new LayeredBoss(null, "Ruled", "essentiornal", 27, "pink", "baseTrapTurret", 2.5, 2.5);
-ruled.addLayer({turret: {
-    POSITION: [2.5, 8, 0, null, 160, 0],
-    TYPE: "skimmerTurret",
+let delequant = new LayeredBoss(null, "Delequant", "essentiornal", 13, "orange", "baseTrapTurret", 4, 5.5);
+delequant.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["minigunTurret", {GUN_STAT_SCALE: {health: 1.7, damage: 1.995, resist: 1.35, speed: 1.15}}]
 }});
-ruled.addLayer({turret: {
-    POSITION: [2.5, 8, 0, null, 160, 0],
-    TYPE: "forkTurret",
-}}, true, 6.5);
-ruled.addLayer({turret: {
-    POSITION: [2.5, 8, 0, null, 160, 0],
-    TYPE: "carrierTurret",
-}}, true, 5.5);
-ruled.addLayer({turret: {
-    POSITION: [2.5, 8, 0, null, 160, 0],
-    TYPE: "carrierTurret",
-}}, true, 4.5);
-ruled.addLayer({turret: {
-    POSITION: [3.5, 8, 0, null, 160, 0],
-    TYPE: "rifleTurret",
-}}, true, 3.5);
-ruled.addLayer({turret: {
-    POSITION: [3.5, 8, 0, null, 160, 0],
-    TYPE: "forkTurret",
-}}, true, 2.5);
-ruled.addLayer({turret: {
-    POSITION: [4.5, 8, 0, null, 160, 0],
-    TYPE: "auto4gun",
-}}, true, 1.5);
+delequant.addLayer({turret: {
+    POSITION: [6.5, 9, 0, null, 160, 0],
+    TYPE: ["minigunTurret", {GUN_STAT_SCALE: {health: 1.7, damage: 1.995, resist: 1.35, speed: 1.15}}]
+}}, true, 4);
+
+
 
 
 
