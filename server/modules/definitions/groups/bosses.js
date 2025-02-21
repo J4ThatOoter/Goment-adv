@@ -1084,7 +1084,7 @@ Class.eternal = {
     },
 };
 Class.essentiornal = {
-    PARENT: "miniboss",
+    PARENT: "eternal",
     LABEL: "Essentiornal",
     SKILL: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
     VALUE: 9e6,
@@ -1563,7 +1563,7 @@ let ruled = new LayeredBoss(null, "Ruled", "essentiornal", 21, "pink", "baseTrap
 ruled.addLayer({turret: {
     POSITION: [2.5, 8, 0, null, 160, 0],
     TYPE: "skimmerTurret",
-}}, true, 7.5);
+}});
 ruled.addLayer({turret: {
     POSITION: [2.5, 8, 0, null, 160, 0],
     TYPE: "forkTurret",
@@ -1577,16 +1577,16 @@ ruled.addLayer({turret: {
     TYPE: "carrierTurret",
 }}, true, 4.5);
 ruled.addLayer({turret: {
-    POSITION: [2.5, 8, 0, null, 160, 0],
+    POSITION: [3.5, 8, 0, null, 160, 0],
     TYPE: "rifleTurret",
 }}, true, 3.5);
 ruled.addLayer({turret: {
-    POSITION: [2.5, 8, 0, null, 160, 0],
+    POSITION: [3.5, 8, 0, null, 160, 0],
     TYPE: "forkTurret",
 }}, true, 2.5);
 ruled.addLayer({turret: {
-    POSITION: [2.5, 8, 0, null, 160, 0],
-    TYPE: "forkTurret",
+    POSITION: [4.5, 8, 0, null, 160, 0],
+    TYPE: "auto4gun",
 }}, true, 1.5);
 
 
