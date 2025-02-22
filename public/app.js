@@ -206,7 +206,7 @@ function getElements(kb, storeInDefault) {
     }
 }
 window.onload = async () => {
-    window.serverAdd = (await (await fetch("/serverData.json")).json()).ip;
+       window.serverAdd ="https://reimagined-journey-q79x599666rrfxrj5-8000.app.github.dev/";
     if (Array.isArray(window.serverAdd)) {
         window.isMultiserver = true;
         const servers = window.serverAdd;
